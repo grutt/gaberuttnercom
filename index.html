@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gabe Ruttner</title>
+    <style media="screen">
+      @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900');
+      body, html{
+        height:100%;
+        padding:0px;
+        margin:0px;
+        font-family: 'Source Code Pro', monospace;
+      }
+
+      @media (min-width: 575px){
+        .about{
+          position:absolute;
+          z-index:10;
+          width:46%;
+          max-width: 427px;
+          left:50%;
+          top:15%;
+          border-radius: 3px;
+          box-shadow: 4px 7px 20px rgba(0,0,0,.8);
+        }
+        .cover{
+          width: 100%;
+          height: 100%;
+          position: absolute;
+        }
+      }
+      @media (max-width: 575px){
+        body{
+          display:flex;
+          flex-direction:column;
+          flex-wrap: nowrap;
+        }
+
+        .cover{
+          flex-grow: 1;
+        }
+
+        a{
+          display:block;
+        }
+      }
+
+
+        .cover{
+          background-image: url('./assets/cover.jpg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+
+        .about{
+          background:rgba(28,28,28,.9);
+        }
+
+        .about-title{
+          background: rgba(0,0,0,1);
+          color:#bcffd2;;
+          padding:15px;
+          font-size: 1.1em;
+          border-radius: 3px 3px 0px 0px;
+        }
+
+        .about-title b{
+          font-size: 1.3em;
+          color:#40ff7f
+        }
+
+        .about-body{
+          padding:15px;
+          color:white;
+        }
+
+        .about-body a{
+            color: #bcffd2;
+            text-decoration: none;
+        }
+        .about-body a:hover{
+            color: #40ff7f;
+            text-decoration: underline;
+        }
+
+        .about-body a b{
+          opacity:0;
+        }
+        .about-body a:hover b{
+          opacity:1;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="about">
+      <div class="about-title">
+        <b>GABE RUTTNER</b><br />
+        human-centric engineer
+      </div>
+      <div class="about-body">
+        i build technical products which
+        are deeply connected with customer needs.<br /><br />
+        i also travel in search of the best food.<br /><br />
+
+        <a href="https://calendly.com/gruttner"><b>&gt;</b> schedule a call</a><br />
+        <a href="https://www.linkedin.com/in/gruttner/"><b>&gt;</b> connect on linkedin</a><br />
+        <a href="https://goo.gl/maps/F425kQR8pw82"><b>&gt;</b> explore my favorite places</a>
+      </div>
+    </div>
+    <div class="cover">
+    </div>
+  </body>
+</html>
