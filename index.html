@@ -102,6 +102,28 @@
           opacity:1;
         }
 
+        .site-footer{
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          z-index: 20;
+          padding: 8px 12px;
+          box-sizing: border-box;
+          text-align: center;
+          background: rgba(0,0,0,.6);
+          font-size: .8em;
+        }
+        .site-footer a{
+          color: #bcffd2;
+          text-decoration: none;
+          margin: 0 8px;
+        }
+        .site-footer a:hover{
+          color: #40ff7f;
+          text-decoration: underline;
+        }
+
     </style>
   </head>
   <body>
@@ -120,5 +142,9 @@
     </div>
     <div class="cover">
     </div>
+    <footer class="site-footer">
+      <a href="/privacy.html">privacy policy</a>
+      <a href="/terms.html">terms &amp; conditions</a>
+    </footer>
   </body>
 </html>
