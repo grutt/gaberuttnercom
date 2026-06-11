@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>SMS Opt-In &middot; Gabe Ruttner</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/favicons/site.webmanifest">
+    <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg" color="#40ff7f">
+    <link rel="shortcut icon" href="/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style media="screen">
+      @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,900');
+      body, html{
+        padding:0px;
+        margin:0px;
+        background:#1c1c1c;
+        color:#ffffff;
+        font-family: 'Source Code Pro', monospace;
+        line-height:1.6;
+      }
+      .wrap{
+        max-width:720px;
+        margin:0 auto;
+        padding:40px 20px 80px;
+      }
+      h1{
+        color:#40ff7f;
+      }
+      h2{
+        color:#bcffd2;
+        font-size:1.1em;
+        margin-top:32px;
+      }
+      a{
+        color:#bcffd2;
+        text-decoration:none;
+      }
+      a:hover{
+        color:#40ff7f;
+        text-decoration:underline;
+      }
+      .muted{
+        color:#9a9a9a;
+        font-size:.9em;
+      }
+      form{
+        margin-top:24px;
+        padding:20px;
+        background:#262626;
+        border-radius:3px;
+      }
+      label{
+        display:block;
+        margin-bottom:8px;
+        color:#bcffd2;
+      }
+      input[type="tel"]{
+        width:100%;
+        max-width:320px;
+        box-sizing:border-box;
+        padding:10px;
+        margin-bottom:16px;
+        background:#1c1c1c;
+        border:1px solid #444;
+        border-radius:3px;
+        color:#ffffff;
+        font-family:'Source Code Pro', monospace;
+        font-size:1em;
+      }
+      .consent{
+        display:flex;
+        align-items:flex-start;
+        gap:10px;
+        margin-bottom:16px;
+        font-size:.9em;
+      }
+      .consent input{
+        margin-top:5px;
+        flex-shrink:0;
+      }
+      button{
+        padding:10px 24px;
+        background:#40ff7f;
+        border:none;
+        border-radius:3px;
+        color:#1c1c1c;
+        font-family:'Source Code Pro', monospace;
+        font-weight:900;
+        font-size:1em;
+        cursor:pointer;
+      }
+      button:hover{
+        background:#bcffd2;
+      }
+      .confirmation{
+        display:none;
+        margin-top:16px;
+        color:#40ff7f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>SMS Opt-In</h1>
+
+      <form id="optin-form">
+        <label for="phone">Mobile phone number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+1 (555) 555-5555" required>
+
+        <div class="consent">
+          <input type="checkbox" id="consent" name="consent" required>
+          <label for="consent" style="display:inline; margin:0; color:#ffffff;">
+            By checking this box and submitting your phone number, you agree to
+            receive SMS messages from Gabriel Ruttner, including one-time
+            passcodes, appointment reminders, and service updates. Consent is
+            not a condition of any purchase. Message frequency varies. Message
+            &amp; data rates may apply. Reply STOP to unsubscribe or HELP for
+            help at any time. See our
+            <a href="/privacy.html">Privacy Policy</a> and
+            <a href="/terms.html">Terms &amp; Conditions</a>.
+          </label>
+        </div>
+
+        <button type="submit">Sign up for SMS</button>
+        <p class="confirmation" id="confirmation">
+          Thanks! You have opted in to receive SMS messages from Gabriel
+          Ruttner. Reply STOP at any time to unsubscribe.
+        </p>
+      </form>
+
+      <h2>Message frequency</h2>
+      <p>
+        Message frequency varies. You will only receive messages related to the
+        purpose for which you opted in.
+      </p>
+
+      <h2>Costs</h2>
+      <p>
+        Message and data rates may apply.
+      </p>
+
+      <h2>Opting out</h2>
+      <p>
+        Reply STOP to any message to unsubscribe at any time. You will receive
+        a final confirmation message. Reply HELP for help.
+      </p>
+
+      <h2>Privacy</h2>
+      <p>
+        No mobile information will be shared with third parties or affiliates
+        for marketing or promotional purposes. See the
+        <a href="/privacy.html">Privacy Policy</a> for details.
+      </p>
+
+      <p style="margin-top:40px;"><a href="/">&lt; back home</a></p>
+    </div>
+
+    <script>
+      document.getElementById('optin-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        document.getElementById('confirmation').style.display = 'block';
+        this.querySelector('button').disabled = true;
+      });
+    </script>
+  </body>
+</html>
